@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #greeting {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>   
+    <h1>Hello, World!</h1>
+    <p id="greeting">Click the button to change the greeting.</p>
+    <button id="change-greeting-button">Change Greeting</button>
+    
+    <script>
+        const greeting = document.getElementById("greeting");
+        const changeGreetingButton = document.getElementById("change-greeting-button");
+
+        const greetings = [
+            "Hello, World!",
+            "Hola, Mundo!",
+            "Bonjour, le Monde!",
+            "Hallo, Welt!",
+            "Ciao, Mondo!"
+        ];
+
+        let currentGreetingIndex = 0;
+
+        changeGreetingButton.addEventListener("click", () => {
+            currentGreetingIndex = (currentGreetingIndex + 1) % greetings.length;
+            greeting.textContent = greetings[currentGreetingIndex];
+        });
+    </script>
+</body>
+</html>
